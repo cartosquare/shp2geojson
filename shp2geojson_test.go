@@ -12,7 +12,7 @@ func TestPoint(t *testing.T) {
 	jsonStr, err := Convert(data)
 	assert.Equal(t, err, nil)
 
-	err = ioutil.WriteFile("./fixture/point.geojson", []byte(jsonStr), 0644)
+	err = ioutil.WriteFile("./fixture/point.geojson", jsonStr, 0644)
 	assert.Equal(t, err, nil)
 }
 
@@ -21,7 +21,7 @@ func TestLine(t *testing.T) {
 	jsonStr, err := Convert(data)
 	assert.Equal(t, err, nil)
 
-	err = ioutil.WriteFile("./fixture/line.geojson", []byte(jsonStr), 0644)
+	err = ioutil.WriteFile("./fixture/line.geojson", jsonStr, 0644)
 	assert.Equal(t, err, nil)
 }
 
@@ -30,6 +30,6 @@ func TestPolygon(t *testing.T) {
 	jsonStr, err := Convert(data)
 	assert.Equal(t, err, nil)
 
-	err = ioutil.WriteFile("./fixture/polygon.geojson", []byte(jsonStr), 0644)
+	err = ioutil.WriteFile("./fixture/polygon.geojson", jsonStr, 0644)
 	assert.Equal(t, err, nil)
 }

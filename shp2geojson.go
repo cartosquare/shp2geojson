@@ -10,10 +10,10 @@ import (
 
 // Convert shapefile to geojson
 // currently not support Multi Geometry
-func Convert(input string) (string, error) {
+func Convert(input string) ([]byte, error) {
 	shape, err := shp.Open(input)
 	if err != nil {
-		return "", err
+		return nil, err
 	}
 	defer shape.Close()
 
@@ -81,7 +81,7 @@ func Convert(input string) (string, error) {
 
 	rawJSON, err := fc.MarshalJSON()
 	if err != nil {
-		return "", err
+		return nil, err
 	}
-	return string(rawJSON), nil
+	return rawJSON, nil
 }
